@@ -36,16 +36,10 @@
 			script.println("<script>");
 			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
-		} else if (result == 0) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('Wrong password.')");
-			script.println("history.back()");
-			script.println("</script>");
 		} else if (result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('Unknown ID.')");
+			script.println("alert('Wrong ID or Password.')");
 			script.println("history.back()");
 			script.println("</script>");
 		} else if (result == -2) {
