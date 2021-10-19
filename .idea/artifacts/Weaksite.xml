@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Weaksite">
+    <output-path>$PROJECT_DIR$/out/artifacts/Weaksite</output-path>
+    <root id="archive" name="Weaksite.war">
+      <element id="artifact" artifact-name="Weak:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.26" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
