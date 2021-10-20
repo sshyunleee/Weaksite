@@ -12,13 +12,14 @@
 </head>
 <body>
 	<%
-
 		int bbsID = 0;
 		if (request.getParameter("bbsID") != null) {
 			bbsID = Integer.parseInt(request.getParameter("bbsID"));
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		BbsDAO bbsDAO = new BbsDAO();
 		int result = bbsDAO.update(bbsID, request.getParameter("bbsTitle"), request.getParameter("bbsContent"));
+		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href = 'bbs.jsp'");
 		script.println("</script>");
