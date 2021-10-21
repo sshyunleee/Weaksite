@@ -46,7 +46,7 @@
 				<form method="post" action="joinAction.jsp">
 					<h3 style="text-align: center;">Join form</h3>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="ID" name="userID" maxlength="20">
+						<input type="text" class="form-control" placeholder="ID" name="userID" maxlength="50">
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="Password" name="userPassword" maxlength="20">
