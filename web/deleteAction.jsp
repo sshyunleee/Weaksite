@@ -16,9 +16,9 @@
 		if (request.getParameter("bbsID") != null) {
 			bbsID = Integer.parseInt(request.getParameter("bbsID"));
 		}
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		Bbs bbs = new BbsDAO().getView(bbsID);
 		BbsDAO bbsDAO = new BbsDAO();
-		int result = bbsDAO.delete(bbsID);
+		int result = bbsDAO.delBbs(bbsID);
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("location.href = 'bbs.jsp'");

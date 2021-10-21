@@ -2,13 +2,11 @@ package user;
 
 import java.sql.*;
 
-import static java.lang.System.out;
 
 public class UserDAO {
 	
 	private Connection conn;
 	private PreparedStatement pstmt;
-	private ResultSet rs;
 	
 	public UserDAO() {
 		try {
@@ -31,13 +29,16 @@ public class UserDAO {
 			rs = st.executeQuery(SQL);
 
 			if (rs.next()) {
-				return 1; // 로그인 성공
+				// Success
+				return 1;
 			}
-			return -1; // 아이디, 비밀번호가 없음
+			// Wrong ID or Password
+			return -1;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; // 데이터베이스 오류
+		// DB Error
+		return -2;
 	}
 
 	public int join(User user) {
@@ -54,6 +55,7 @@ public class UserDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		// DB Error
 		return -1;
 	}
 

@@ -19,11 +19,11 @@
 			userID = (String) session.getAttribute("userID");
 		}
 		BbsDAO bbsDAO = new BbsDAO();
-		int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
+		int result = bbsDAO.insBbs(bbs.getBbsTitle(), userID, bbs.getBbsContent());
 		if (result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('Failed to write.')");
+			script.println("alert('Failed to insBbs.')");
 			script.println("history.back()");
 			script.println("</script>");
 		} else {
